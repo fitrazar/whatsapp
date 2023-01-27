@@ -39,7 +39,7 @@ async function connectToWhatsApp () {
 async function blast() {
     const sockWa = await connectToWhatsApp();
     // MY API
-    axios.get(`https://script.google.com/macros/s/AKfycbywzLFdYOMWMxZIRkGidRfW73rkXSruYSNRqK3tnDCF-cGt-YuR6YE4RaJhDmmAS0-6/exec`)
+    axios.get(`YOUR_API`)
     .then(async (response) => {
         
         // await sock.sendMessage("6281385931773@s.whatsapp.net", { caption: "ini caption", image: {url: ""} })
