@@ -47,21 +47,12 @@ async function blast() {
         let x = 0;
         
         sockWa.ev.on('messages.upsert', async ({ messages }) => {
-        let interval = setInterval(async () => {
-            if (x < data.length) {
-                const num = data[x].whatsapp+"@s.whatsapp.net";
-                const str = `Halo ${data[x].nama} \njumlah nilai kamu ${data[x].jumlah}`;
-                const url = data[x].file;
-                console.log(str);
+            const num = data[x].whatsapp+"@s.whatsapp.net";
+            const str = `Halo ${data[x].nama} \njumlah nilai kamu ${data[x].jumlah}`;
+            const url = data[x].file;
+            console.log(str);
 
-                await sockWa.sendMessage(num, { text: str });
-                // await sockWa.sendMessage(num, { caption: str, image: {url: url} })
-            } else {
-                clearInterval(interval);
-                console.log('End of Journey');
-            }
-            x++
-          }, 3000)
+            await sockWa.sendMessage(num, { text: str });
         })
     })
 }
