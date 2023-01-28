@@ -49,7 +49,6 @@ async function blast() {
         sockWa.ev.on('messages.upsert', async ({ messages }) => {
             const num = data[x].whatsapp+"@s.whatsapp.net";
             const str = `Halo ${data[x].nama} \njumlah nilai kamu ${data[x].jumlah}`;
-            const url = data[x].file;
             console.log(str);
 
             await sockWa.sendMessage(num, { text: str });
